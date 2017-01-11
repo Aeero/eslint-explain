@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --devtool --progress",
     "build": "webpack -p",
-    "lint": "eslint -fix"
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
