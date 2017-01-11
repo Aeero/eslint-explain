@@ -75,10 +75,25 @@
 - [websorm](http://www.jetbrains.com/webstorm/)
 - 等等
 
-
 　　下面就以Atom为例：
   
+  首先需要安装`linter-eslint`插件。是的，是首先，并不是说安装了这个插件就可以直接使用了，项目里还是需要添加eslint的依赖的（.eslintrc配置当然也要）。那有人就会说了每个待检查的文件都需要添加依赖吗？其实不用担心，这时候全局安装eslint的重要性就体现出来了。
+  
+　　该插件是支持全局配置ESLint的，需要更改`linter-eslint`的缺省配置：
+  
+　　关闭  `Disable when no ESLint config is found` 
+  
+　　打开  `Use global ESLint installation`
   
-## 五、如何将eslint融入到新项目或旧项目中 ##
+  **如果路径有问题的，必要时，可以改一下Global Node Installation Path配置**
+  
+  最后还需添加一个全局的.eslintrc配置
+  
+>　　为项目服务的 .eslintrc.json 文件是放在项目文件夹下的，全局的 .eslintrc.json 文件则放在当前用户的根目录下，类Unix系统的当前用户目录是 ~ ，而Windows系统的话则是类似于 C:\Windows\Users\Username 这样的地方。
+
+　　之后就可以使用atom检查任何一个js文件。
+  
+  
+## 六、如何将eslint融入到新项目或旧项目中
 
 
