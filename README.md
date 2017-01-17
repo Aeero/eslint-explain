@@ -162,6 +162,44 @@ module.exports = {
 
 ## 四、eslint规则
 
+eslint规则的基本写法：
+
+```
+"rules": {
+  "semi": [2,"always"],
+  "no-console":2
+}
+```
+
+其中key值代表规则名，value值配置该项规则
+
+value的值可以是数字：0或字符串'0'或者是'off'，都代表不验证该项规则的意思（其实也可以删掉。）
+
+同理 1、'1'、'warn'代表警告级别的错误（不满足这项规则将会报警告）
+
+　　 2、'2'、'error'代表错误级别的错误（不满足这项规则将会报错误）
+   
+value的值还可以是一个数组，通常来讲数组的第一个值为错误等级（就是上面说的），数组中其他的值为该项规则的设置，如：
+
+`"semi": [2,"always"]`
+
+'semi'代表分号的验证，2（错误级别），'always'(每行代码末尾要加分号)
+
+[点击查看完整规则](http://eslint.cn/docs/rules/)
+
+eslint不仅提供了
+
+- Possible Errors
+- Best Practices
+- Strict Mode
+- Variables
+- Node.js and CommonJS
+- Stylistic Issues
+- ECMAScript 6
+
+这么多种类的规则
+
+而且还支持拓展。
 ## 五、如何在代码编辑器里使用eslint
 
 　　如果每次检测代码都需要运行命令，那将会显得相当繁琐，得不偿失。所以，最好的办法是将eslint工具搬到代码编辑器里，能够在写代码阶段就及时发现问题，才是这个工具的精髓所在。
@@ -176,8 +214,10 @@ module.exports = {
 
 　　下面就以Atom为例：
   
+  
 　　首先需要安装`linter`和`linter-eslint`插件。是的，是首先，并不是说安装了这个插件就可以直接使用了，项目里还是需要添加eslint的依赖的（.eslintrc配置当然也要）。那有人就会说了每个待检查的文件都需要添加依赖吗？其实不用担心，这时候全局安装eslint的重要性就体现出来了。
   
+  
 　　该插件是支持全局配置ESLint的，需要更改`linter-eslint`的缺省配置：
 
   关闭  `Disable when no ESLint config is found`
