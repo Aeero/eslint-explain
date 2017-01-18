@@ -241,3 +241,54 @@ eslint不仅提供了
   
 
 ## 六、如何将eslint融入到新项目或旧项目中
+
+　　对于使用webpack的项目，我们需要安装`eslint-loader`。和其他的loader一样，`eslint-loader`需要在webpack.config.js里配置
+
+```
+{
+  test: /\.js$/,
+  loader: 'eslint-loader',
+  exclude: /node_modules/,
+}
+```
+
+　　如果还使用了`babel-loader`或是其他的`loader`，要把`eslint-loader`放在前面，毕竟我们要检测的是源代码。
+
+```
+{
+  test: /\.js$/,
+  loaders: ['babel-loader','eslint-loader'],
+  exclude: /node_modules/,
+}
+```
+
+　　或者是添加在preLoaders里，表示预先加载
+
+```
+preLoaders: [
+  {
+    test: /\.js$/,
+    loader: "eslint-loader", exclude: /node_modules/
+  }
+]
+```
+
+**注意：** webpack2.某个版本删除掉了`preLoaders`这个属性。
+
+
+　　本例子就是使用了webpack的，到项目目录下运行`npm run dev`，如果配置正确应该在控制台里会输出错误信息（= =我可能用的是假的webpack）。之后会发现，虽然会报错但是还是打包成功了，这显然不满足要求。
+
+如果不通过eslint不能打包需要添加
+
+```
+module.exports:{
+  ...
+  eslint: {
+    failOnError: false,
+    failOnWarn: false,
+  }
+  ...
+}
+```
+
+更多的使用方法和配置[点击这里](https://www.npmjs.com/package/eslint-loader)

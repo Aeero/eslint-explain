@@ -11,10 +11,14 @@ module.exports = {
     resolve: {
       extensions: ['', '.js', '.jsx'],
     },
+    eslint: {
+      failOnError: false,
+      failOnWarn: false,
+    },
     module: {
         preLoaders: [{
-            test: /\.js$/,
-            loader: 'eslint-loader?{rules:{semi:0}}',
+            test: /\.js[x]$/,
+            loader: 'eslint-loader',
             exclude: /node_modules/,
           },],
         loaders: [{

@@ -13,7 +13,7 @@
     "type": "git",
     "url": ".."
   },
-  "author": "luckykun",
+  "author": "lhf",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.4.0",
