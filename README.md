@@ -58,7 +58,7 @@
 ### eslint 命令行
 
 　　常用的命令有：
-- \(▔＾▔)/
+-  \\(▔＾▔)/
 - (╯▔︵▔)╯
 - (╬▔▽▔)凸
 
@@ -292,3 +292,9 @@ module.exports:{
 ```
 
 更多的使用方法和配置[点击这里](https://www.npmjs.com/package/eslint-loader)
+
+
+### 拓展知识
+- [YAML](http://www.ruanyifeng.com/blog/2016/07/yaml.html?f=tt)
+- [LF和CRLF的区别](http://www.tuicool.com/articles/IJjQVb)
+- [pre-commit](http://www.tuicool.com/articles/neaMvqm)
